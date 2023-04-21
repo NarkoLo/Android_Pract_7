@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.android_pract_7.R;
+
 public class RegisterFragment extends Fragment {
     final public static String TAG = RegisterFragment.class.getSimpleName();
 
@@ -63,7 +65,7 @@ public class RegisterFragment extends Fragment {
             Bundle userData = new Bundle();
             userData.putString("email", email.getText().toString());
             userData.putString("password", password.getText().toString());
-            Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment2, userData);
+            Navigation.findNavController(view).navigate(R.id.registerFragment_to_loginFragment, userData);
         });
 
     }

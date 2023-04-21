@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android_pract_7.R;
+
 public class ProductHolder extends RecyclerView.ViewHolder {
     TextView productTitle;
     TextView productPrice;
