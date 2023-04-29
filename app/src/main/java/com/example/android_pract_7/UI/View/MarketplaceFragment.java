@@ -10,20 +10,25 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.android_pract_7.Data.Repository.DataSource.Product;
+import com.example.android_pract_7.Data.Models.Product;
 import com.example.android_pract_7.R;
+import com.example.android_pract_7.UI.ViewModel.MarketplaceViewModel;
 import com.example.android_pract_7.databinding.FragmentProductsListBinding;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
-public class ProductsRecycleViewFragment extends Fragment {
+public class MarketplaceFragment extends Fragment {
     FragmentProductsListBinding binding;
-    List<Product> products = new ArrayList<>();
+    MarketplaceViewModel viewModel;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,23 +39,26 @@ public class ProductsRecycleViewFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+
+        viewModel = new ViewModelProvider(this).get(MarketplaceViewModel.class);
+
         RecycleViewProductsAdapter.OnProductClickListener listener = (product, position) -> {
             Log.i("ListView", "Selected item: " + position +
                     "\nTitle: " +  product.getProductTitle() +
                     "\nPrice: " + product.getProductPrice() +
                     "\nAmount " + product.getProductAmount());
-            Toast.makeText(getContext(), "Selected product type:  " + product.getProductTitle(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Selected product type:  "
+                    + product.getProductTitle(), Toast.LENGTH_SHORT).show();
         };
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
 
-        for (int i = 0; i < 200; i++) {
-            products.add(new Product("Beer", String.format("%.2f", new Random().nextDouble()*10) + " $",R.drawable.beer_icon));
-        }
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(new RecycleViewProductsAdapter(listener));
 
-        RecycleViewProductsAdapter adapter = new RecycleViewProductsAdapter(products, listener);
-        recyclerView.setAdapter(adapter);
-
+        viewModel.getProducts().observe(getViewLifecycleOwner(), (value) -> {
+            ((RecycleViewProductsAdapter) Objects
+                    .requireNonNull(binding.recyclerView.getAdapter()))
+                    .updateData(value);
+        });
     }
+
 }

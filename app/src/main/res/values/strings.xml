@@ -21,4 +21,8 @@
     <string name="buy_button_text">buy</string>
     <string name="name">something</string>
     <string name="password_reg_hint">Введиет пароль</string>
+    <string name = "default_user_email">default.user@mail.com</string>
+    <string name = "default_user_password">default.password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

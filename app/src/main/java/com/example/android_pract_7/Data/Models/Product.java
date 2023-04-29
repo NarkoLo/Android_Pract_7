@@ -1,4 +1,4 @@
-package com.example.android_pract_7.Data.Repository.DataSource;
+package com.example.android_pract_7.Data.Models;
 
 
 import lombok.Getter;

@@ -20,12 +20,12 @@ public class HomePageFragment extends Fragment{
     final public static String TAG = HomePageFragment.class.getSimpleName();
 
     public static HomePageFragment newInstance(Bundle data) {
-        HomePageFragment loginFragment = new HomePageFragment();
+        HomePageFragment loginFragment = newInstance();
         if(data != null){
             loginFragment.setArguments(data);
             return loginFragment;
         }
-        return newInstance();
+        return loginFragment;
     }
     public static HomePageFragment newInstance() {
         return new HomePageFragment();
