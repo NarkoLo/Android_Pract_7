@@ -1,4 +1,4 @@
-package com.example.android_pract_7.UI.View;
+package com.example.android_pract_7.UI.Views;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +10,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.android_pract_7.R;

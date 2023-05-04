@@ -1,4 +1,4 @@
-package com.example.android_pract_7.UI.View;
+package com.example.android_pract_7.UI.StateHolders.Holders;
 
 import android.view.View;
 import android.widget.EditText;
@@ -11,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.android_pract_7.R;
 
 public class ProductHolder extends RecyclerView.ViewHolder {
-    TextView productTitle;
-    TextView productPrice;
-    ImageView productImage;
-    EditText productAmount;
+    public TextView productTitle;
+    public TextView productPrice;
+    public ImageView productImage;
+    public EditText productAmount;
     public ProductHolder(@NonNull View productView) {
         super(productView);
         productTitle = productView.findViewById(R.id.product_title);

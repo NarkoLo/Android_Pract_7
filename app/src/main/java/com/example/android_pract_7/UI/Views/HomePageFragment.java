@@ -1,4 +1,4 @@
-package com.example.android_pract_7.UI.View;
+package com.example.android_pract_7.UI.Views;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -45,6 +45,9 @@ public class HomePageFragment extends Fragment{
 
         binding.email.setText(getArguments() != null ? getArguments().getString("email") : "Error");
         binding.exit.setOnClickListener(vie -> Navigation.findNavController(view).navigate(R.id.homeFragment_to_loginFragment));
+        binding.btnToMarketPlace.setOnClickListener(vie -> {
+            Navigation.findNavController(view).navigate(R.id.homeFragment_to_productsListFragment);
+        });
         Log.i(TAG, "onViewCreated");
         Toast.makeText(getContext(), "onViewCreated", Toast.LENGTH_SHORT).show();
 

@@ -1,4 +1,4 @@
-package com.example.android_pract_7.UI.View;
+package com.example.android_pract_7.UI.StateHolders.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,13 +9,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android_pract_7.Data.Models.Product;
 import com.example.android_pract_7.R;
+import com.example.android_pract_7.UI.StateHolders.Holders.ProductHolder;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RecycleViewProductsAdapter extends RecyclerView.Adapter<ProductHolder> {
 
-    interface OnProductClickListener{
+   public interface OnProductClickListener{
         void onClick(Product product, int position);
     }
 

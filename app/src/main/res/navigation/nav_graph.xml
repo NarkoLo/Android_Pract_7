@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.android_pract_7.UI.View.LoginFragment"
+        android:name="com.example.android_pract_7.UI.Views.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/loginFragment_to_homeFragment"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.android_pract_7.UI.View.HomePageFragment"
+        android:name="com.example.android_pract_7.UI.Views.HomePageFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/homeFragment_to_productsListFragment"
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.android_pract_7.UI.View.RegisterFragment"
+        android:name="com.example.android_pract_7.UI.Views.RegisterFragment"
         android:label="RegisterFragment" >
         <action
             android:id="@+id/registerFragment_to_loginFragment"
@@ -37,18 +37,18 @@
     </fragment>
     <fragment
         android:id="@+id/productsListFragment"
-        android:name="com.example.android_pract_7.UI.View.MarketplaceFragment"
+        android:name="com.example.android_pract_7.UI.Views.MarketplaceFragment"
         android:label="ProductsListFragment" >
         <action
             android:id="@+id/productsListFragment_to_choosenProductFragment"
-            app:destination="@id/choosenProductFragment" />
+            app:destination="@id/chosenProductFragment" />
         <action
             android:id="@+id/productsListFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/choosenProductFragment"
-        android:name="com.example.android_pract_7.UI.View.ChosenProductFragment"
+        android:id="@+id/chosenProductFragment"
+        android:name="com.example.android_pract_7.UI.Views.ChosenProductFragment"
         android:label="fragment_choosen_product"
         tools:layout="@layout/fragment_choosen_product" >
         <action

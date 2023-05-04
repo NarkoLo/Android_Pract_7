@@ -13,24 +13,11 @@ import java.util.List;
 public class ProductDataSource {
     public LiveData<List<Product>> products() {
         MutableLiveData<List<Product>> result = new MutableLiveData<>();
-
-        new Thread(() -> {
-            ArrayList<Product> resultArr = new ArrayList<>();
-
-            for (int i = 0; i < 100; i++) {
-                resultArr.add(new Product("Beer", "1$", R.drawable.beer));
-            }
-
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-
-            result.postValue(resultArr);
-        }).start();
-
-
+        ArrayList<Product> resultArr = new ArrayList<>();
+        result.setValue(resultArr);
+        for (int i = 0; i < 100; i++) {
+            resultArr.add(new Product("Beer", "1$", R.drawable.beer));
+        }
         return result;
     }
 

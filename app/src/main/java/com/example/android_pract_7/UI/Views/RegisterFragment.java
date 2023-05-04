@@ -1,4 +1,4 @@
-package com.example.android_pract_7.UI.View;
+package com.example.android_pract_7.UI.Views;
 
 import android.os.Bundle;
 import android.util.Log;
